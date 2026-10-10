@@ -1,0 +1,27 @@
+{
+  "name": "@piro0919/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint rules for piro0919 repositories",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./tailwind": "./tailwind.js"
+  },
+  "files": [
+    "index.js",
+    "tailwind.js"
+  ],
+  "dependencies": {
+    "eslint-plugin-tailwindcss": "^4.4.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0 || ^10.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}
