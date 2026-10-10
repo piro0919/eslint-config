@@ -8,7 +8,7 @@ Shared ESLint rules for `piro0919` repositories. Biome のリポジトリは [bi
 ## Usage
 
 ```bash
-pnpm add -D github:piro0919/eslint-config#v1.0.0
+pnpm add -D github:piro0919/eslint-config#v1.1.0
 ```
 
 ```js
@@ -28,7 +28,7 @@ export default defineConfig([
 
 ## What it does
 
-- `magicNumbers()` — 名前の無い数字を落とす（`@typescript-eslint/no-magic-numbers`）。0・1・2・-1、単位の換算、HTTP の状態は数字のまま書いてよい。`ignores` で番号の表などのファイルを外し、`allow` で値を足す
+- `magicNumbers()` — 名前の無い数字を落とす（`@typescript-eslint/no-magic-numbers`）。0・1・2・-1、単位の換算、HTTP の状態は数字のまま書いてよい。テストのファイル（`*.test.*`・`test/` など）は対象の外（期待値に名前を付けると読みにくくなるため）。`ignores` で番号の表などのファイルを外し、`allow` で値を足す
 - `tailwind({ cssConfigPath })` — `[...]` に値をじかに書くのを落とす（`no-arbitrary-value`）。決まりに無いクラス名も落とす（`no-custom-classname`。自前の CSS のクラスは `whitelist` に足す）
 
 ## Release

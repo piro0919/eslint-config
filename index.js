@@ -7,9 +7,21 @@
  *
  * @param {{ level?: 'warn' | 'error', files?: string[], ignores?: string[], allow?: number[] }} [options]
  *   level: 最初は 'warn' で入れ、直し終えたら 'error' にする。
- *   ignores: 番号の表など、数字そのものが中身のファイル。
+ *   ignores: 番号の表など、数字そのものが中身のファイル（テストのファイル TEST_FILES は最初から外す）。
  *   allow: そのプロジェクトで数字のまま書いてよい値を足す
  */
+/**
+ * テストのファイル。期待値（expect(x).toBe(4) の 4）に名前を付けると、かえって何を確かめているか読みにくくなるので、対象から外す
+ */
+export const TEST_FILES = [
+  "**/*.test.*",
+  "**/*.spec.*",
+  "**/__tests__/**",
+  "test/**",
+  "tests/**",
+  "e2e/**",
+];
+
 export default function magicNumbers({
   level = "warn",
   files = ["**/*.{ts,tsx}"],
@@ -19,7 +31,7 @@ export default function magicNumbers({
   return [
     {
       files,
-      ignores,
+      ignores: [...TEST_FILES, ...ignores],
       rules: {
         "no-magic-numbers": "off",
         "@typescript-eslint/no-magic-numbers": [

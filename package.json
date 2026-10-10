@@ -1,6 +1,6 @@
 {
   "name": "@piro0919/eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared ESLint rules for piro0919 repositories",
   "license": "MIT",
   "type": "module",
